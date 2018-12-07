@@ -65,6 +65,8 @@ export class HomePage {
       //  Determine the version.  We can add additional functionality if a more recent version of the DW API is present
       this.barcodeProvider.sendCommand("com.symbol.datawedge.api.GET_VERSION_INFO", "");
 
+      this.barcodeProvider.sendCommand("com.symbol.datawedge.api.GET_PROFILES_LIST", "");
+
       ////////////////////////////
       //  EVENT HANDLING
       ////////////////////////////

@@ -66,6 +66,10 @@ export class BarcodeProvider {
             let activeProfile = intent.extras['com.symbol.datawedge.api.RESULT_GET_ACTIVE_PROFILE'];
             constructorInstance.events.publish('data:activeProfile', activeProfile);
           }
+          else if (intent.extras.hasOwnProperty('com.symbol.datawedge.api.RESULT_GET_PROFILES_LIST')) {
+            let profilesList = intent.extras['com.symbol.datawedge.api.RESULT_GET_PROFILES_LIST'];  
+            console.log("XXXXXXXXX Profiles List: " + profilesList);
+          }
           else if (!intent.extras.hasOwnProperty('RESULT_INFO')) {
             //  A barcode has been scanned
             constructorInstance.events.publish('data:scan', intent, new Date().toLocaleTimeString());
